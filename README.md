@@ -1,6 +1,6 @@
-necessary installs
-run `git -C ColBERT/ pull || git clone https://github.com/stanford-futuredata/ColBERT.git`
-run `pip install -r requirements.txt`
+necessary installs  
+run `git -C ColBERT/ pull || git clone https://github.com/stanford-futuredata/ColBERT.git`  
+run `pip install -r requirements.txt`  
 
 scripts to run for assignment  
 
