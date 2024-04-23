@@ -32,16 +32,17 @@ def read_tsv(tsv_file):
 if __name__ == '__main__':    
     collection = read_tsv('combined.tsv')
 
-    index_name = '/home/shea.durgin/text-mining/TMAssignment5/experiments/my_lyrics_experiment/indexes/my_lyrics_index'
+    index_name = 'my_lyrics_index/'
     searcher = Searcher(index=index_name, collection=collection)
 
     queries = read_tsv('test.tsv')
 
     with open('search_results.tsv', 'w') as f:
-        f.write("query\trank\tscore\tlyrics\n")
+        # using passage id in place of title, no title in data from previous assignment
+        f.write("query\tQ0\tpassage_id\trank\tscore\ttag\n")
         for query in queries:
             # Perform the search
             results = searcher.search(query, k=10)
             query = extract_keywords(query)
             for p_id, rank, score in zip(*results):
-                f.write(f"{query}\t{rank}\t{score:.1f}\t{searcher.collection[p_id]}\n")
+                f.write(f"{query}\tQ0\t{p_id}\t{rank}\t{score:.1f}\tSheaD\n")

@@ -25,7 +25,7 @@ if __name__ == '__main__':
     collection = read_tsv('combined.tsv')
 
     index_name = 'my_lyrics_index'
-    experiment_name = 'my_lyrics_experiment'
+    experiment_name = 'default'
 
     # Initialize the Indexer
     with Run().context(RunConfig(nranks=1, experiment=experiment_name)):
